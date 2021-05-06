@@ -2,14 +2,17 @@ require("Screen")
 require("Brick")
 
 
-view_w, view_h = 300, 700
+view_w, view_h = 300, 600
 
 function love.load()
     love.window.setMode(view_w,view_h,{borderless=false})
     sc = Screen:init(view_w,view_h,10,10,10,10)
-    sc:BrickGrid(8,15)
+    sc:BrickGrid(10,20)
+    print(sc.b_width, sc.b_height)
+    br = Brick:SetSize(sc.b_width, sc.b_height)
+    
 
-    br = Brick:init(sc.b_width, sc.b_height,sc.x,sc.y)
+    br = Brick:init(sc.x,sc.y)
     print(#sc.tileMap)
     print(sc.rowNum)
     print(sc.bottomY)

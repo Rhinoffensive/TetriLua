@@ -1,5 +1,6 @@
 Screen = {}
 Screen.__index = Screen
+local self = setmetatable({}, Screen)
 
 function Screen:init( window_w,window_h,left_pad,right_pad,top_pad,bottom_pad )
 
@@ -9,6 +10,8 @@ function Screen:init( window_w,window_h,left_pad,right_pad,top_pad,bottom_pad )
     Screen.x = left_pad
     Screen.y = top_pad
     Screen.bottomY = window_h - bottom_pad
+    Screen.leftX = left_pad
+    Screen.rightX = window_w - right_pad
 
     return Screen
 
